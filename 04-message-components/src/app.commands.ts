@@ -5,7 +5,7 @@ import { MessageButtonStyles } from 'discord.js/typings/enums';
 
 @Injectable()
 export class AppCommands {
-	@SlashCommand({ name: 'button', description: 'Creates button component.' })
+	@SlashCommand('button', 'Creates button component.')
 	public async createButton(@Context() interaction: CommandInteraction) {
 		return interaction.reply({
 			content: `Button`,
@@ -17,7 +17,7 @@ export class AppCommands {
 		});
 	}
 
-	@SlashCommand({ name: 'select-menu', description: 'Creates select menu component.' })
+	@SlashCommand('select-menu', 'Creates select menu component.')
 	public async createSelectMenu(@Context() interaction: CommandInteraction) {
 		return interaction.reply({
 			content: `Button`,

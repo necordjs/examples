@@ -1,5 +1,5 @@
 import { Injectable } from '@nestjs/common';
-import { Button, Context, SelectMenu, Values } from 'necord';
+import { Button, Context, SelectMenu } from 'necord';
 import { ButtonInteraction, SelectMenuInteraction } from 'discord.js';
 
 @Injectable()
@@ -10,7 +10,7 @@ export class AppComponents {
 	}
 
 	@SelectMenu('SELECT_MENU')
-	public onSelectMenu(@Context() interaction: SelectMenuInteraction, @Values() values: string[]) {
-		return interaction.reply({ content: `Your selected color - ${values.join(' ')}` });
+	public onSelectMenu(@Context() interaction: SelectMenuInteraction) {
+		return interaction.reply({ content: `Your selected color - ${interaction.values.join(' ')}` });
 	}
 }

@@ -7,7 +7,7 @@ import { AppCommands } from './app.commands';
 	imports: [
 		NecordModule.forRoot({
 			token: process.env.DISCORD_TOKEN,
-			registerApplicationCommands: process.env.DEV_GUILD,
+			development: [process.env.DEV_GUILD],
 			intents: [Intents.FLAGS.GUILDS, Intents.FLAGS.GUILD_MESSAGES, Intents.FLAGS.DIRECT_MESSAGES]
 		})
 	],
