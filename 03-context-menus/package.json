@@ -19,7 +19,7 @@
 		"reflect-metadata": "0.1.13",
 		"necord": "5.0.1",
 		"rimraf": "3.0.2",
-		"rxjs": "7.6.0"
+		"rxjs": "7.8.0"
 	},
 	"devDependencies": {
 		"@types/node": "18.11.15",
