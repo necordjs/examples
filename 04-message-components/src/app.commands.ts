@@ -1,29 +1,29 @@
 import { Injectable } from '@nestjs/common';
-import { Context, SlashCommand } from 'necord';
-import { CommandInteraction, MessageActionRow, MessageButton, MessageSelectMenu } from 'discord.js';
-import { MessageButtonStyles } from 'discord.js/typings/enums';
+import { Context, SlashCommand, SlashCommandContext } from 'necord';
+import { ActionRowBuilder, ButtonBuilder, SelectMenuBuilder } from 'discord.js';
+import { ButtonStyle } from 'discord-api-types/v10';
 
 @Injectable()
 export class AppCommands {
-	@SlashCommand('button', 'Creates button component.')
-	public async createButton(@Context() [interaction]: ContextOf<slashCommand>) {
+	@SlashCommand({ name: 'button', description: 'Creates button component.' })
+	public async createButton(@Context() [interaction]: SlashCommandContext) {
 		return interaction.reply({
 			content: `Button`,
 			components: [
-				new MessageActionRow().addComponents(
-					new MessageButton().setCustomId('BUTTON').setLabel('LABEL').setStyle(MessageButtonStyles.PRIMARY)
+				new ActionRowBuilder<ButtonBuilder>().addComponents(
+					new ButtonBuilder().setCustomId('BUTTON').setLabel('LABEL').setStyle(ButtonStyle.Primary)
 				)
 			]
 		});
 	}
 
-	@SlashCommand('select-menu', 'Creates select menu component.')
-	public async createSelectMenu(@Context() [interaction]: ContextOf<slashCommand>) {
+	@SlashCommand({ name: 'select-menu', description: 'Creates select menu component.' })
+	public async createSelectMenu(@Context() [interaction]: SlashCommandContext) {
 		return interaction.reply({
 			content: `Button`,
 			components: [
-				new MessageActionRow().addComponents(
-					new MessageSelectMenu()
+				new ActionRowBuilder<SelectMenuBuilder>().addComponents(
+					new SelectMenuBuilder()
 						.setCustomId('SELECT_MENU')
 						.setPlaceholder('Select your color')
 						.setMaxValues(1)

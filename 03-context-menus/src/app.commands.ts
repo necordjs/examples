@@ -1,21 +1,30 @@
 import { Injectable } from '@nestjs/common';
-import { Context, MessageCommand, Options, UserCommand } from 'necord';
-import { ContextMenuInteraction, Message, MessageEmbed, User } from 'discord.js';
+import {
+	Context,
+	MessageCommand,
+	MessageCommandContext,
+	Options,
+	TargetMessage,
+	TargetUser,
+	UserCommand,
+	UserCommandContext
+} from 'necord';
+import { EmbedBuilder, Message, User } from 'discord.js';
 
 @Injectable()
 export class AppCommands {
-	@MessageCommand('Get message id')
-	public async getMessageId(@Context() [interaction]: ContextOf<'messageContextCommand'>, @Options('message') message: Message) {
+	@MessageCommand({ name: 'Get message id' })
+	public async getMessageId(@Context() [interaction]: MessageCommandContext, @TargetMessage() message: Message) {
 		return interaction.reply({ content: `Message ID is ${message.id}` });
 	}
 
-	@UserCommand('Get user avatar')
-	public async getUserAvatar(@Context() [interaction]: ContextOf<'userContextCommand'>, @Options('user') user: User) {
+	@UserCommand({ name: 'Get user avatar' })
+	public async getUserAvatar(@Context() [interaction]: UserCommandContext, @TargetUser() user: User) {
 		return interaction.reply({
 			embeds: [
-				new MessageEmbed()
+				new EmbedBuilder()
 					.setTitle(`Avatar ${user.username}`)
-					.setImage(user.displayAvatarURL({ size: 4096, dynamic: true }))
+					.setImage(user.displayAvatarURL({ size: 4096, forceStatic: false }))
 			]
 		});
 	}
