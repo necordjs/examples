@@ -2,6 +2,7 @@ import { NecordModule } from 'necord';
 import { Module } from '@nestjs/common';
 import { IntentsBitField } from 'discord.js';
 import { AppCommands } from './app.commands';
+import { AppComponents  } from './app.components';
 
 @Module({
 	imports: [
@@ -15,6 +16,6 @@ import { AppCommands } from './app.commands';
 			]
 		})
 	],
-	providers: [AppCommands]
+	providers: [AppCommands, AppComponents]
 })
 export class AppModule {}
