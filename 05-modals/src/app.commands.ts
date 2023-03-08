@@ -5,7 +5,7 @@ import { TextInputStyle } from 'discord-api-types/v10';
 
 @Injectable()
 export class AppCommands {
-	@SlashCommand({ name: 'Modal', description: 'Creates modal component.' })
+	@SlashCommand({ name: 'modal', description: 'Creates modal component.' })
 	public async createButton(@Context() [interaction]: SlashCommandContext) {
 		return interaction.showModal(
 			new ModalBuilder()
