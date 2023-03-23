@@ -13,7 +13,7 @@
 		"lint": "eslint src/**/*.ts --fix"
 	},
 	"dependencies": {
-		"@nestjs/common": "9.3.11",
+		"@nestjs/common": "9.3.12",
 		"@nestjs/core": "9.3.12",
 		"discord.js": "14.8.0",
 		"reflect-metadata": "0.1.13",
