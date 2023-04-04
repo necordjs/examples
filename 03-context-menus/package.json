@@ -17,7 +17,7 @@
 		"@nestjs/core": "9.3.12",
 		"discord.js": "14.9.0",
 		"reflect-metadata": "0.1.13",
-		"necord": "5.5.3",
+		"necord": "5.5.4",
 		"rimraf": "4.4.1",
 		"rxjs": "7.8.0"
 	},
