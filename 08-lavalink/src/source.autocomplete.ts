@@ -5,18 +5,19 @@ import { AutocompleteInterceptor } from 'necord';
 
 @Injectable()
 export class SourceAutocompleteInterceptor extends AutocompleteInterceptor {
-  public transformOptions(interaction: AutocompleteInteraction) {
-    const focused = interaction.options.getFocused(true);
-    let choices: string[];
+	public transformOptions(interaction: AutocompleteInteraction) {
+		const focused = interaction.options.getFocused(true);
+		let choices: string[];
 
-    if (focused.name === 'source') {
-      choices = [DefaultSources.youtube, DefaultSources.spotify];
-    }
+		if (focused.name === 'source') {
+			// eslint-disable-next-line prefer-const
+			choices = [DefaultSources.youtube, DefaultSources.spotify];
+		}
 
-    return interaction.respond(
-      choices
-        .filter((choice) => choice.startsWith(focused.value.toString()))
-        .map((choice) => ({ name: choice, value: choice })),
-    );
-  }
+		return interaction.respond(
+			choices
+				.filter(choice => choice.startsWith(focused.value.toString()))
+				.map(choice => ({ name: choice, value: choice }))
+		);
+	}
 }

@@ -4,13 +4,13 @@ import { NecordPaginationService } from '@necord/pagination';
 
 @Injectable()
 export class AppCommands {
-    public constructor(private readonly paginationService: NecordPaginationService) {}
+	public constructor(private readonly paginationService: NecordPaginationService) {}
 
 	@SlashCommand({ name: 'pagination', description: 'Test pagination' })
-    public async onPagination(@Context() [interaction]: SlashCommandContext) {
-        const pagination = this.paginationService.get('test');
-        const page = await pagination.build();
+	public async onPagination(@Context() [interaction]: SlashCommandContext) {
+		const pagination = this.paginationService.get('test');
+		const page = await pagination.build();
 
-        return interaction.reply(page);
-    }
+		return interaction.reply(page);
+	}
 }
