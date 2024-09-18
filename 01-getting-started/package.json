@@ -18,7 +18,7 @@
 		"discord.js": "14.16.2",
 		"reflect-metadata": "0.1.14",
 		"necord": "6.1.0",
-		"rimraf": "6.0.0",
+		"rimraf": "6.0.1",
 		"rxjs": "7.8.1"
 	},
 	"devDependencies": {
