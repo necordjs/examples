@@ -2,7 +2,7 @@ import { NecordModule } from 'necord';
 import { Module } from '@nestjs/common';
 import { IntentsBitField } from 'discord.js';
 import { AppCommands } from './app.commands';
-import { AppComponents  } from './app.components';
+import { AppComponents } from './app.components';
 
 @Module({
 	imports: [

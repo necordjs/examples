@@ -3,7 +3,6 @@ import {
 	Context,
 	MessageCommand,
 	MessageCommandContext,
-	Options,
 	TargetMessage,
 	TargetUser,
 	UserCommand,

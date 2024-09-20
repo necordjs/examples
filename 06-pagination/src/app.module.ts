@@ -1,6 +1,8 @@
 import { NecordModule } from 'necord';
 import { Module } from '@nestjs/common';
-import { AppUpdate } from './app.update';
+import { NecordPaginationModule } from '@necord/pagination';
+import { AppCommands } from './app.commands';
+import { AppService } from './app.service';
 import { IntentsBitField } from 'discord.js';
 
 @Module({
@@ -12,8 +14,14 @@ import { IntentsBitField } from 'discord.js';
 				IntentsBitField.Flags.GuildMessages,
 				IntentsBitField.Flags.DirectMessages
 			]
+		}),
+		NecordPaginationModule.forRoot({
+			buttons: {},
+			allowSkip: true,
+			allowTraversal: true,
+			buttonsPosition: 'end'
 		})
 	],
-	providers: [AppUpdate]
+	providers: [AppCommands, AppService]
 })
 export class AppModule {}
