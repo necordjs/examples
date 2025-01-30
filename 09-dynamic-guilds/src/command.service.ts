@@ -38,7 +38,7 @@ export class CommandService implements OnApplicationBootstrap {
     this.logger.verbose(`${slashCommands.length} SlashCommand (s) explored`);
 
     const db = await this.fetchGuildIds();
-    slashCommands.forEach((command) => {
+for (const command of slashCommands) {
       this.slashCommandService.remove(command.getName());
       const data = db.find((d) => d.name === command.getName());
       if (!data) {
