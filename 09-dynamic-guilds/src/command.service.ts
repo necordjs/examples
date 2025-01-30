@@ -14,10 +14,10 @@ export class CommandService implements OnApplicationBootstrap {
 	) {}
 
 	async onApplicationBootstrap() {
-		this.client.once('ready', () => this.commandService.registerAllCommands());
-		await this.updateMeta();
-		if (!this.client.isReady()) return;
-		await this.commandService.registerAllCommands();
+		this.client.once('ready', async () => {
+			await this.updateCommandsMeta();
+			await this.commandService.registerAllCommands()
+		});
 	}
 
 	// Fetch guild ids from API
@@ -25,7 +25,7 @@ export class CommandService implements OnApplicationBootstrap {
 		return [{ id: 1, name: 'dynamic', guildIds: [process.env.DB_GUILD_ID] }];
 	}
 
-	async updateMeta() {
+	async updateCommandsMeta() {
 		this.logger.verbose('Updating metadata for SlashCommands');
 
 		const slashCommands = this.explorerService.explore(SlashCommand.KEY);
