@@ -3,7 +3,7 @@ import { NecordModule } from 'necord';
 import { CommandService } from './command.service';
 import { DynamicCommand } from './dynamic.command';
 import { AppService } from './app.service';
-import { PingCommand } from './ping.command';
+import { SimpleCommand } from './simple.command';
 
 @Module({
 	imports: [
@@ -13,6 +13,6 @@ import { PingCommand } from './ping.command';
 			skipRegistration: true
 		})
 	],
-	providers: [CommandService, AppService, DynamicCommand, PingCommand]
+	providers: [CommandService, AppService, DynamicCommand, SimpleCommand]
 })
 export class AppModule {}
