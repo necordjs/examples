@@ -19,7 +19,7 @@
 		"necord": "6.1.0",
 		"reflect-metadata": "0.2.1",
 		"rimraf": "4.1.2",
-		"rxjs": "7.8.0"
+		"rxjs": "7.8.1"
 	},
 	"devDependencies": {
 		"@eslint/eslintrc": "^3.1.0",
