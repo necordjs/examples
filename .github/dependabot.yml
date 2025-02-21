@@ -5,22 +5,8 @@ updates:
     schedule:
       interval: daily
   - package-ecosystem: npm
-    directory: '/01-getting-started'
-    schedule:
-      interval: daily
-    open-pull-requests-limit: 10
-  - package-ecosystem: npm
-    directory: '/02-slash-commands'
-    schedule:
-      interval: daily
-    open-pull-requests-limit: 10
-  - package-ecosystem: npm
-    directory: '/03-context-menus'
-    schedule:
-      interval: daily
-    open-pull-requests-limit: 10
-  - package-ecosystem: npm
-    directory: '/04-message-components'
+    directories:
+      - '/*'
     schedule:
       interval: daily
     open-pull-requests-limit: 10
