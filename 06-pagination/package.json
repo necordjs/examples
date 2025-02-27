@@ -13,7 +13,7 @@
 		"lint": "eslint src/**/*.ts --fix"
 	},
 	"dependencies": {
-		"@necord/pagination": "2.0.0",
+		"@necord/pagination": "2.0.2",
 		"@nestjs/common": "^10.2.0",
 		"@nestjs/core": "^11.0.10",
 		"discord.js": "14.7.1",
