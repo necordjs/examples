@@ -17,7 +17,7 @@
 		"@nestjs/common": "10.2.0",
 		"@nestjs/core": "11.0.10",
 		"discord.js": "14.7.1",
-		"lavalink-client": "2.3.6",
+		"lavalink-client": "2.4.7",
 		"necord": "6.8.7",
 		"reflect-metadata": "0.2.1",
 		"rimraf": "6.0.1",
