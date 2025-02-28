@@ -14,7 +14,7 @@
 	},
 	"dependencies": {
 		"@necord/pagination": "2.0.2",
-		"@nestjs/common": "^10.2.0",
+		"@nestjs/common": "^11.0.10",
 		"@nestjs/core": "^11.0.10",
 		"discord.js": "14.7.1",
 		"necord": "6.8.7",
