@@ -18,7 +18,7 @@
 		"@nestjs/core": "11.0.11",
 		"discord.js": "14.18.0",
 		"lavalink-client": "2.4.7",
-		"necord": "6.8.7",
+		"necord": "6.8.8",
 		"reflect-metadata": "0.2.2",
 		"rimraf": "6.0.1",
 		"rxjs": "7.8.2"
