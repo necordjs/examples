@@ -16,7 +16,7 @@
 		"@nestjs/common": "^11.0.10",
 		"@nestjs/core": "^11.0.10",
 		"discord.js": "14.21.0",
-		"necord": "6.8.14",
+		"necord": "6.9.0",
 		"reflect-metadata": "0.2.2",
 		"rimraf": "6.0.1",
 		"rxjs": "7.8.2"
