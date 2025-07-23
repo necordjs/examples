@@ -15,7 +15,7 @@
 	"dependencies": {
 		"@necord/lavalink": "1.1.4",
 		"@nestjs/common": "11.1.5",
-		"@nestjs/core": "11.1.4",
+		"@nestjs/core": "11.1.5",
 		"discord.js": "14.21.0",
 		"lavalink-client": "2.5.7",
 		"necord": "6.9.1",
