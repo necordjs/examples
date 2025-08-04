@@ -1,6 +1,6 @@
 name: 🐛 Bug report
 description: Report incorrect or unexpected behavior
-labels: [bug, need repro]
+labels: [bug, needs repro]
 body:
   - type: textarea
     id: description
