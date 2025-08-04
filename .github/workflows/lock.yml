@@ -1,0 +1,37 @@
+name: 'Lock Threads'
+
+on:
+  schedule:
+    - cron: '0 16 * * *'
+  workflow_dispatch:
+
+permissions:
+  actions: write
+  contents: write # only for delete-branch option
+  issues: write
+  pull-requests: write
+
+concurrency:
+  group: lock
+
+jobs:
+  action:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Close Stale Issues
+        uses: actions/stale@v9.1.0
+        with:
+          days-before-stale: 90
+          days-before-close: 0
+          stale-issue-label: 'wontfix'
+          exempt-issue-labels: 'help wanted'
+          stale-issue-message: >
+            This issue has been automatically locked since there
+            has not been any recent activity after it was closed.
+
+            Please open a new issue for related bugs.
+          stale-pr-message: >
+            This pull request has been automatically locked since there
+            has not been any recent activity after it was closed.
+
+            Please open a new pull request for related changes.
