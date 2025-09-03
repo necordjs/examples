@@ -7,7 +7,8 @@ updates:
       interval: daily
   - package-ecosystem: npm
     rebase-strategy: "auto"
-    directory: "/"
+    directories:
+      - "/*"
     schedule:
       interval: daily
     open-pull-requests-limit: 10
