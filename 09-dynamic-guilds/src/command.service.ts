@@ -14,7 +14,7 @@ export class CommandService implements OnApplicationBootstrap {
 	) {}
 
 	async onApplicationBootstrap() {
-		this.client.once('ready', async () => {
+		this.client.once('clientReady', async () => {
 			await this.updateCommandsMeta();
 			await this.commandService.registerAllCommands()
 		});
