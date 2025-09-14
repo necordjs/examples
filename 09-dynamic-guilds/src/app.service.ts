@@ -5,8 +5,8 @@ import { ContextOf, Ctx, Once } from 'necord';
 export class AppService {
 	private readonly logger = new Logger(AppService.name);
 
-	@Once('ready')
-	public onReady(@Ctx() [client]: ContextOf<'ready'>) {
+	@Once('clientReady')
+	public onReady(@Ctx() [client]: ContextOf<'clientReady'>) {
 		this.logger.log(`Bot is ready! Logged in as ${client.user.tag}`);
 	}
 }
