@@ -15,7 +15,7 @@
 	"dependencies": {
 		"@nestjs/common": "^11.0.6",
 		"@nestjs/core": "^11.0.6",
-		"discord.js": "14.22.1",
+		"discord.js": "14.23.2",
 		"necord": "6.11.1",
 		"reflect-metadata": "0.2.2",
 		"rimraf": "6.0.1",
@@ -24,9 +24,9 @@
 	"devDependencies": {
 		"@eslint/eslintrc": "^3.1.0",
 		"@eslint/js": "^9.10.0",
-		"@types/node": "24.6.2",
-		"@typescript-eslint/eslint-plugin": "8.45.0",
-		"@typescript-eslint/parser": "8.45.0",
+		"@types/node": "24.7.2",
+		"@typescript-eslint/eslint-plugin": "8.46.0",
+		"@typescript-eslint/parser": "8.46.0",
 		"eslint": "9.37.0",
 		"eslint-config-prettier": "10.1.8",
 		"eslint-plugin-prettier": "5.5.4",
