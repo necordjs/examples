@@ -13,20 +13,20 @@
 		"lint": "eslint src/**/*.ts --fix"
 	},
 	"dependencies": {
-		"@nestjs/common": "11.1.8",
-		"@nestjs/core": "11.1.8",
-		"discord.js": "14.24.2",
+		"@nestjs/common": "11.1.9",
+		"@nestjs/core": "11.1.9",
+		"discord.js": "14.25.1",
 		"necord": "6.11.2",
 		"reflect-metadata": "0.2.2",
-		"rimraf": "6.1.0",
+		"rimraf": "6.1.2",
 		"rxjs": "7.8.2"
 	},
 	"devDependencies": {
 		"@eslint/eslintrc": "^3.1.0",
 		"@eslint/js": "^9.10.0",
-		"@types/node": "24.10.0",
-		"@typescript-eslint/eslint-plugin": "8.46.3",
-		"@typescript-eslint/parser": "8.46.3",
+		"@types/node": "24.10.1",
+		"@typescript-eslint/eslint-plugin": "8.47.0",
+		"@typescript-eslint/parser": "8.47.0",
 		"eslint": "9.39.1",
 		"eslint-config-prettier": "10.1.8",
 		"eslint-plugin-prettier": "5.5.4",
