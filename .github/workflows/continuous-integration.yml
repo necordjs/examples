@@ -25,6 +25,7 @@ jobs:
           - 06-pagination
           - 07-localization/01-default-adapter
           - 07-localization/02-nested-adapter
+          - 08-lavalink
           - 09-dynamic-guilds
     defaults:
       run:

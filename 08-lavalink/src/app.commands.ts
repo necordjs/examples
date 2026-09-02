@@ -1,23 +1,24 @@
-import { Injectable, UseInterceptors } from '@nestjs/common';
-import { GuildMember } from 'discord.js';
-import { LavalinkManager } from 'lavalink-client';
 import { Context, Options, SlashCommand, SlashCommandContext } from 'necord';
-import { QueryDto } from './query.dto';
-import { SourceAutocompleteInterceptor } from './source.autocomplete';
+import { Injectable, UseInterceptors } from '@nestjs/common';
+import { LavalinkManager } from 'lavalink-client';
+import { GuildMember } from 'discord.js';
+
+import { SourceAutocompleteInterceptor } from './source.autocomplete.js';
+import { QueryDto } from './query.dto.js';
 
 @Injectable()
 export class AppCommands {
 	public constructor(private readonly lavalinkManager: LavalinkManager) {}
 
-	@UseInterceptors(SourceAutocompleteInterceptor)
 	@SlashCommand({
 		name: 'play',
 		description: 'play a track'
 	})
+	@UseInterceptors(SourceAutocompleteInterceptor)
 	public async onPlay(@Context() [interaction]: SlashCommandContext, @Options() { query, source }: QueryDto) {
 		const player = this.lavalinkManager.createPlayer({
-			guildId: interaction.guildId,
-			voiceChannelId: (interaction.member as GuildMember).voice.channelId,
+			guildId: interaction.guildId!,
+			voiceChannelId: (interaction.member as GuildMember).voice.channelId!,
 			textChannelId: interaction.channelId,
 			// optional configurations:
 			selfDeaf: true,
