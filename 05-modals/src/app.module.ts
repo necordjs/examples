@@ -1,14 +1,15 @@
-import { NecordModule } from 'necord';
-import { Module } from '@nestjs/common';
 import { IntentsBitField } from 'discord.js';
-import { AppCommands } from './app.commands';
-import { AppComponents } from './app.components';
+import { Module } from '@nestjs/common';
+import { NecordModule } from 'necord';
+
+import { AppComponents } from './app.components.js';
+import { AppCommands } from './app.commands.js';
 
 @Module({
 	imports: [
 		NecordModule.forRoot({
-			token: process.env.DISCORD_TOKEN,
-			development: [process.env.DEV_GUILD],
+			token: process.env.DISCORD_TOKEN!,
+			development: [process.env.DEV_GUILD!],
 			intents: [
 				IntentsBitField.Flags.Guilds,
 				IntentsBitField.Flags.GuildMessages,

@@ -1,5 +1,5 @@
-import { Injectable } from '@nestjs/common';
 import { Ctx, SlashCommand, SlashCommandContext } from 'necord';
+import { Injectable } from '@nestjs/common';
 
 @Injectable()
 export class DynamicCommand {

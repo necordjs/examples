@@ -1,6 +1,7 @@
-import { Injectable } from '@nestjs/common';
 import { Context, Options, SlashCommand, SlashCommandContext } from 'necord';
-import { LengthDto } from './dtos/length.dto';
+import { Injectable } from '@nestjs/common';
+
+import { LengthDto } from './dtos/length.dto.js';
 
 @Injectable()
 export class AppCommands {

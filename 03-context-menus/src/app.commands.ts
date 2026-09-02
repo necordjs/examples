@@ -1,4 +1,3 @@
-import { Injectable } from '@nestjs/common';
 import {
 	Context,
 	MessageCommand,
@@ -9,6 +8,7 @@ import {
 	UserCommandContext
 } from 'necord';
 import { EmbedBuilder, Message, User } from 'discord.js';
+import { Injectable } from '@nestjs/common';
 
 @Injectable()
 export class AppCommands {

@@ -1,5 +1,5 @@
-import { OnModuleInit, Injectable } from '@nestjs/common';
 import { NecordPaginationService, PageBuilder } from '@necord/pagination';
+import { OnModuleInit, Injectable } from '@nestjs/common';
 
 @Injectable()
 export class AppService implements OnModuleInit {

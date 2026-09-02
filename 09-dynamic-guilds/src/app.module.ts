@@ -1,15 +1,16 @@
 import { Module } from '@nestjs/common';
 import { NecordModule } from 'necord';
-import { CommandService } from './command.service';
-import { DynamicCommand } from './dynamic.command';
-import { AppService } from './app.service';
-import { SimpleCommand } from './simple.command';
+
+import { CommandService } from './command.service.js';
+import { DynamicCommand } from './dynamic.command.js';
+import { SimpleCommand } from './simple.command.js';
+import { AppService } from './app.service.js';
 
 @Module({
 	imports: [
 		NecordModule.forRoot({
 			intents: ['Guilds'],
-			token: process.env.DISCORD_TOKEN,
+			token: process.env.DISCORD_TOKEN!,
 			skipRegistration: true
 		})
 	],

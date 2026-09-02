@@ -1,13 +1,14 @@
-import { NecordModule } from 'necord';
-import { Module } from '@nestjs/common';
 import { NecordLocalizationModule, NestedLocalizationAdapter, UserResolver } from '@necord/localization';
-import { AppService } from './app.service';
 import { IntentsBitField } from 'discord.js';
+import { Module } from '@nestjs/common';
+import { NecordModule } from 'necord';
+
+import { AppService } from './app.service.js';
 
 @Module({
 	imports: [
 		NecordModule.forRoot({
-			token: process.env.DISCORD_TOKEN,
+			token: process.env.DISCORD_TOKEN!,
 			intents: [
 				IntentsBitField.Flags.Guilds,
 				IntentsBitField.Flags.DirectMessages,
@@ -16,7 +17,7 @@ import { IntentsBitField } from 'discord.js';
 				IntentsBitField.Flags.MessageContent
 			],
 			prefix: '!',
-			development: [process.env.DISCORD_TEST_GUILD]
+			development: [process.env.DISCORD_TEST_GUILD!]
 		}),
 		NecordLocalizationModule.forRoot({
 			resolvers: UserResolver,

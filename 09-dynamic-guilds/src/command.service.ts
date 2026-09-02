@@ -1,5 +1,11 @@
+import {
+	CommandsService,
+	NecordExplorerService,
+	SlashCommand,
+	SlashCommandDiscovery,
+	SlashCommandsService
+} from 'necord';
 import { Injectable, Logger, OnApplicationBootstrap } from '@nestjs/common';
-import { CommandsService, ExplorerService, SlashCommandDiscovery, SlashCommandsService, SlashCommand } from 'necord';
 import { Client } from 'discord.js';
 
 @Injectable()
@@ -8,7 +14,7 @@ export class CommandService implements OnApplicationBootstrap {
 
 	constructor(
 		private readonly slashCommandService: SlashCommandsService,
-		private readonly explorerService: ExplorerService<SlashCommandDiscovery>,
+		private readonly explorerService: NecordExplorerService<SlashCommandDiscovery>,
 		private readonly commandService: CommandsService,
 		private readonly client: Client
 	) {}
@@ -16,13 +22,13 @@ export class CommandService implements OnApplicationBootstrap {
 	async onApplicationBootstrap() {
 		this.client.once('clientReady', async () => {
 			await this.updateCommandsMeta();
-			await this.commandService.registerAllCommands()
+			await this.commandService.registerAllCommands();
 		});
 	}
 
 	// Fetch guild ids from API
 	async fetchGuildIds() {
-		return [{ id: 1, name: 'dynamic', guildIds: [process.env.DB_GUILD_ID] }];
+		return [{ id: 1, name: 'dynamic', guildIds: [process.env.DB_GUILD_ID!] }];
 	}
 
 	async updateCommandsMeta() {

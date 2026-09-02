@@ -1,18 +1,23 @@
 {
-    "compilerOptions": {
-        "module": "commonjs",
-        "declaration": true,
-        "removeComments": true,
-        "emitDecoratorMetadata": true,
-        "experimentalDecorators": true,
-        "allowSyntheticDefaultImports": true,
-        "target": "ES2021",
-        "sourceMap": true,
-        "outDir": "./dist",
-        "baseUrl": "./",
-        "incremental": true,
-        "skipLibCheck": true
-    },
-    "include": ["src/**/*"]
+	"compilerOptions": {
+		"module": "Node20",
+		"moduleResolution": "Node16",
+		"target": "ES2023",
+		"esModuleInterop": true,
+		"declaration": true,
+		"removeComments": true,
+		"sourceMap": true,
+		"outDir": "./dist",
+		"rootDir": "./src",
+		"emitDecoratorMetadata": true,
+		"experimentalDecorators": true,
+		"useDefineForClassFields": false,
+		"skipLibCheck": true,
+		"forceConsistentCasingInFileNames": true,
+		"strictPropertyInitialization": false,
+		"strictNullChecks": true,
+		"types": ["node"]
+	},
+	"include": ["src/**/*.ts"],
+	"exclude": ["node_modules", "dist"]
 }
-  

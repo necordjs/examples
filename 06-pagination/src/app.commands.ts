@@ -1,6 +1,6 @@
-import { Injectable } from '@nestjs/common';
 import { Context, SlashCommand, SlashCommandContext } from 'necord';
 import { NecordPaginationService } from '@necord/pagination';
+import { Injectable } from '@nestjs/common';
 
 @Injectable()
 export class AppCommands {

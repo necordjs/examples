@@ -1,0 +1,53 @@
+name: Continuous Integration
+
+on:
+  push:
+    branches: [master]
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    name: ${{ matrix.example }} (Node ${{ matrix.node-version }})
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        node-version: ['20.19.0', '22.13.0', 'lts/*']
+        example:
+          - 01-getting-started
+          - 02-slash-commands
+          - 03-context-menus
+          - 04-message-components
+          - 05-modals
+          - 06-pagination
+          - 07-localization/01-default-adapter
+          - 07-localization/02-nested-adapter
+          - 09-dynamic-guilds
+    defaults:
+      run:
+        working-directory: ${{ matrix.example }}
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v7
+
+      - name: Install Node
+        uses: actions/setup-node@v7
+        with:
+          node-version: ${{ matrix.node-version }}
+          cache: npm
+          cache-dependency-path: ${{ matrix.example }}/package-lock.json
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Run Oxlint
+        run: npm run lint
+
+      - name: Run TypeScript typecheck
+        run: npm run typecheck
+
+      - name: Build example
+        run: npm run build
