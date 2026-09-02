@@ -1,5 +1,5 @@
-import { Injectable } from '@nestjs/common';
 import { Ctx, Modal, ModalContext } from 'necord';
+import { Injectable } from '@nestjs/common';
 
 @Injectable()
 export class AppComponents {

@@ -1,6 +1,6 @@
-import { Injectable } from '@nestjs/common';
 import { CurrentTranslate, localizationMapByKey, TranslationFn } from '@necord/localization';
 import { Context, SlashCommand, SlashCommandContext } from 'necord';
+import { Injectable } from '@nestjs/common';
 
 @Injectable()
 export class AppService {

@@ -1,5 +1,5 @@
-import { Injectable } from '@nestjs/common';
 import { Button, ButtonContext, Context, StringSelect, StringSelectContext } from 'necord';
+import { Injectable } from '@nestjs/common';
 
 @Injectable()
 export class AppComponents {

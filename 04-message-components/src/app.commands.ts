@@ -1,7 +1,7 @@
-import { Injectable } from '@nestjs/common';
-import { Context, SlashCommand, SlashCommandContext } from 'necord';
 import { ActionRowBuilder, ButtonBuilder, SelectMenuBuilder } from 'discord.js';
+import { Context, SlashCommand, SlashCommandContext } from 'necord';
 import { ButtonStyle } from 'discord-api-types/v10';
+import { Injectable } from '@nestjs/common';
 
 @Injectable()
 export class AppCommands {
